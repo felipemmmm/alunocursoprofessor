@@ -50,7 +50,7 @@ public class CursoBD {
     }
 
     // 6. Adicionar aluno ao curso ja criado
-    public boolean insertAluno(String nomeCurso, ArrayList<Aluno> newAluno) {
+    public boolean insertAluno(String nomeCurso, Aluno aluno) {
         Curso cursoBD = cursos.stream()
                 .filter(cursoFiltro -> cursoFiltro.getNome().equals(nomeCurso))
                 .findFirst()
@@ -60,7 +60,7 @@ public class CursoBD {
             return false;
         }
         // Adicionando aluno
-        cursoBD.setAlunos(newAluno);
+        cursoBD.getAlunos().add(aluno);
 
         return true;
     }
