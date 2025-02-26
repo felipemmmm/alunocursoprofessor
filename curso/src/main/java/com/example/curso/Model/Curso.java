@@ -8,20 +8,19 @@ public class Curso {
     private Long idCurso;
     private String nome;
     private int numeroSala;
-    private List<Aluno> alunos;
+    private ArrayList<Aluno> alunos;
     private Professor professor;
 
     // Bob construtor c/ parametros
-    public Curso(Long idCurso, String nome, int numeroSala, Aluno alunos, Professor professor) {
+    public Curso(Long idCurso, String nome, int numeroSala, ArrayList<Aluno> alunos, Professor professor) {
         this.idCurso = idCurso;
         this.nome = nome;
         this.numeroSala = numeroSala;
-        this.alunos = new ArrayList<>();
+        this.alunos = alunos;
         this.professor = professor;
     }
 
     // Getters and Setters
-
     public Long getIdCurso() {
         return idCurso;
     }
@@ -46,11 +45,11 @@ public class Curso {
         this.numeroSala = numeroSala;
     }
 
-    public List<Aluno> getAlunos() {
+    public ArrayList<Aluno> getAlunos() {
         return alunos;
     }
 
-    public void setAlunos(List<Aluno> alunos) {
+    public void setAlunos(ArrayList<Aluno> alunos) {
         this.alunos = alunos;
     }
 
