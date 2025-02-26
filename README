@@ -1,0 +1,33 @@
+# Back-End API de Cursos
+
+## Descrição
+
+Atividade proposta tem como objetivo desenvolver um back-end (API) utilizando a linguagem de programação Java com o framework Spring. O projeto deve ser criado do zero usando o Spring Initializr.
+
+## Requisitos
+
+- O projeto deve ser configurado no IntelliJ com o JDK 21 ou 17 e usando a pasta `java` como sources.
+- O projeto deverá usar o Maven como gerenciador de dependências.
+- Deve-se inserir a dependência do Swagger.
+- A implementação deve ocorrer usando o Padrão Arquitetural MVC (Model, View, Controller).
+- Não deverá ser utilizado nenhum banco de dados, tudo deve ser armazenado em um `ArrayList`.
+- O uso do Lombok é opcional.
+- Os verbos HTTP - `GET`, `POST`, `PUT`, `DELETE` devem ser utilizados.
+- Deve-se criar quantos endpoints forem necessários para manipular os cursos.
+
+## Funcionalidades
+
+1. **Consultar todos os Cursos.**
+2. **Filtrar a consulta de Cursos com base no nome do Professor.**
+3. **Filtrar a consulta de Cursos com base no número da sala de aula.**
+4. **Consultar o Curso com base em seu identificador único.**
+5. **Cadastrar um curso, com os alunos e professor.**
+6. **Adicionar um aluno a um curso já existente.**
+7. **Atualizar os dados de um determinado curso e de seu professor.**
+8. **Atualizar os dados de um aluno de um determinado curso.**
+9. **Deletar um curso.**
+
+## Observações
+
+- Não é permitido o uso do ChatGPT, apenas consultar nos exemplos criados anteriormente.
+- A entrega deve ocorrer em um repositório do GitHub (submeta apenas o link com o seu repositório).
