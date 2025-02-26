@@ -43,6 +43,10 @@ public class CursoBD {
     }
 
     // Cadastrar Curso, alunos e professor
+    public boolean insert(Curso curso) {
+        cursos.add(curso);
+        return  true;
+    }
 
     // Adicionar aluno ao curso ja criado
 
@@ -54,4 +58,16 @@ public class CursoBD {
 
 
     // Deletar curso
+    public boolean delete(Long idCurso) {
+        Curso cursoBD = cursos.stream()
+                .filter(cursoFiltro -> cursoFiltro.getIdCurso() == idCurso)
+                .findFirst()
+                .orElse(null);
+
+        if (cursoBD == null) {
+            return false;
+        }
+        cursos.remove(cursoBD);
+        return true;
+    }
 }
