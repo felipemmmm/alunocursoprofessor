@@ -78,7 +78,9 @@ public class CursoBD {
 
         cursoBD.setNome(curso.getNome());
         cursoBD.setNumeroSala(curso.getNumeroSala());
-        cursoBD.setProfessor(curso.getProfessor());
+        cursoBD.getProfessor().setNome(curso.getProfessor().getNome());
+        cursoBD.getProfessor().setCpf(curso.getProfessor().getCpf());
+        cursoBD.getProfessor().setSalario(curso.getProfessor().getSalario());
 
         return true;
     }
