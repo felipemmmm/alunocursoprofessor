@@ -55,7 +55,23 @@ public class CursoBD {
 
 
     // Atualizar dados de um curso
+    public boolean update(Long idCurso, Curso curso) {
+        Curso cursoBD = cursos.stream()
+                .filter(cursoFiltro -> cursoFiltro.getIdCurso() == idCurso)
+                .findFirst()
+                .orElse(null);
 
+        if (cursoBD == null) {
+            return false;
+        }
+
+        cursoBD.setNome(curso.getNome());
+        cursoBD.setNumeroSala(curso.getNumeroSala());
+        cursoBD.setProfessor(curso.getProfessor());
+        cursoBD.setAlunos(curso.getAlunos());
+
+        return true;
+    }
 
     // Deletar curso
     public boolean delete(Long idCurso) {
