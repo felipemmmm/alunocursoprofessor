@@ -86,14 +86,14 @@ public class CursoBD {
     }
 
     // 8. Atualizar os dados de um aluno de um curso
-    public boolean updateAluno(Long idCurso, Long idAluno) {
+    public boolean updateAluno(Long idCurso, Long idAluno, Aluno alunoEdit) {
         // Procurando curso com base no idCurso
         Curso cursoBD = cursos.stream()
                 .filter(curso -> curso.getIdCurso() == idCurso)
                 .findFirst()
                 .orElse(null);
         // Procurando aluno com base no idAluno dentro do Obj cursoBD
-        Aluno aluno = cursoBD.getAlunos().stream() // Procurando dentro da lista de "Alunos"
+        Aluno alunoBD = cursoBD.getAlunos().stream() // Procurando dentro da lista de "Alunos"
                 .filter(alunoFiltro -> alunoFiltro.getIdAluno() == idAluno) // Filtra o aluno dentro da Lista com base no idAluno
                 .findFirst() // Acha o primeiro com o idAluno
                 .orElse(null); // Tratamento de erro
@@ -102,8 +102,8 @@ public class CursoBD {
             return false;
         }
         // Atualizando infos do Aluno em especifico
-        aluno.setNome(aluno.getNome());
-        aluno.setCpf(aluno.getCpf());
+        alunoBD.setNome(alunoEdit.getNome());
+        alunoBD.setCpf(alunoEdit.getCpf());
 
         return true; // Se der certo
     }
