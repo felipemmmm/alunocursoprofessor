@@ -52,5 +52,15 @@ public class CursoController {
         return repositorio.getByProf(idProfessor);
     }
 
+    //update CURSO E PROFS
+    public Curso upCursoProf(Long idCurso, Curso curso) {
+        boolean result =  repositorio.upCursoProf(idCurso, curso);
+
+        if (result) {
+            return curso;
+        }
+        return null;
+    }
+
 
 }
