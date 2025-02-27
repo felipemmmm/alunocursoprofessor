@@ -62,5 +62,17 @@ public class CursoController {
         return null;
     }
 
+    //ADD ALUNO AO CURSO JA CRIADO
+    public boolean insertAluno(String nomeCurso, Aluno aluno) {
+        return repositorio.insertAluno(nomeCurso, aluno);
+    }
+
+    //UPDATE dados de  ALUNOS DE UM CURSO
+    public boolean updateAluno(Long idCurso, Long idAluno){
+        return repositorio.updateAluno(idCurso, idAluno);
+    }
+
 
 }
+
+

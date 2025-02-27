@@ -15,12 +15,12 @@ public class CursoBD {
     }
 
 
-    // 1. Buscar todos os cursos
+    // 1. Buscar todos os cursos x
     public List<Curso> findAll() {
         return new ArrayList<>(cursos);
     }
 
-    // 2. Buscar curso com base no professor
+    // 2. Buscar curso com base no professor x
     public List<Curso> getByProf(Long idProfessor) {
         return cursos.stream()
                 .filter(curso -> curso.getProfessor()
@@ -28,14 +28,14 @@ public class CursoBD {
                 .toList();
     }
 
-    // 3. Buscar cursos com base no nmr da sala
+    // 3. Buscar cursos com base no nmr da sala x
     public List<Curso> getByNmrSala(int numeroSala) {
         return cursos.stream()
                 .filter(curso -> curso.getNumeroSala() == numeroSala)
                 .toList();
     }
 
-    // 4. Buscar com base no ID do curso
+    // 4. Buscar com base no ID do curso x
     public Curso getByID(Long idCurso) {
         return cursos.stream()
                 .filter(curso -> curso.getIdCurso() == idCurso)
@@ -43,13 +43,13 @@ public class CursoBD {
                 .orElse(null);
     }
 
-    // 5. Cadastrar Curso, alunos e professor
+    // 5. Cadastrar Curso, alunos e professor x
     public boolean insert(Curso curso) {
         cursos.add(curso);
         return  true;
     }
 
-    // 6. Adicionar aluno ao curso ja criado
+    // 6. Adicionar aluno ao curso ja criado x
     public boolean insertAluno(String nomeCurso, Aluno aluno) {
         Curso cursoBD = cursos.stream()
                 .filter(cursoFiltro -> cursoFiltro.getNome().equals(nomeCurso))
@@ -65,7 +65,7 @@ public class CursoBD {
         return true;
     }
 
-    // 7. Atualizar os dados de um curso e seu prof
+    // 7. Atualizar os dados de um curso e seu prof x
     public boolean upCursoProf(Long idCurso, Curso curso) {
         Curso cursoBD = cursos.stream()
                 .filter(cursoFiltro -> cursoFiltro.getIdCurso() == idCurso)
@@ -83,7 +83,7 @@ public class CursoBD {
         return true;
     }
 
-    // 8. Atualizar os dados de um aluno de um curso
+    // 8. Atualizar os dados de um aluno de um curso x
     public boolean updateAluno(Long idCurso, Long idAluno) {
         // Procurando curso com base no idCurso
         Curso cursoBD = cursos.stream()
@@ -106,7 +106,7 @@ public class CursoBD {
         return true; // Se der certo
     }
 
-    // Extra. Atualizar dados de um curso
+    // Extra. Atualizar dados de um curso x
     public boolean update(Long idCurso, Curso curso) {
         Curso cursoBD = cursos.stream()
                 .filter(cursoFiltro -> cursoFiltro.getIdCurso() == idCurso)
@@ -125,7 +125,7 @@ public class CursoBD {
         return true;
     }
 
-    // 9. Deletar curso
+    // 9. Deletar curso x
     public boolean delete(Long idCurso) {
         Curso cursoBD = cursos.stream()
                 .filter(cursoFiltro -> cursoFiltro.getIdCurso() == idCurso)
