@@ -44,13 +44,13 @@ public class CursoView {
         return  cursoController.insertAluno(nomeCurso, aluno);
     }
     @DeleteMapping("/{idCurso}")
-    public boolean delete(Long idCurso) {
+    public boolean delete(@PathVariable Long idCurso) {
         return cursoController.delete(idCurso);
     }
 
-    @PutMapping("/{idCursoAluno}")
-    public boolean updateAluno(@PathVariable Long idCurso, @PathVariable Long idAluno) {
-        return cursoController.updateAluno(idCurso, idAluno);
+    @PutMapping("/{idCurso}/{idAluno}")
+    public boolean updateAluno(@PathVariable Long idCurso, @PathVariable Long idAluno, @RequestBody Aluno alunoEdit) {
+        return cursoController.updateAluno(idCurso, idAluno, alunoEdit);
     }
 
 }

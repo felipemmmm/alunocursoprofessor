@@ -68,10 +68,9 @@ public class CursoController {
     }
 
     //UPDATE dados de  ALUNOS DE UM CURSO
-    public boolean updateAluno(Long idCurso, Long idAluno){
-        return repositorio.updateAluno(idCurso, idAluno);
+    public boolean updateAluno(Long idCurso, Long idAluno, Aluno alunoEdit){
+        return repositorio.updateAluno(idCurso, idAluno, alunoEdit);
     }
-
 
 }
 
